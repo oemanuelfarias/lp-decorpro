@@ -995,7 +995,14 @@ img, video {
   display: grid;
   grid-template-columns: 6fr 4fr;
   gap: 16px;
-  height: 160px;
+  height: 220px; /* Mobile height */
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 16px; /* Explicit gap between rows */
+}
+
+.kg-row:last-child {
+  margin-bottom: 0;
 }
 
 .kg-row:nth-child(2) {
@@ -1004,7 +1011,9 @@ img, video {
 
 @media (min-width: 768px) {
   .kg-row {
-    height: 280px;
+    height: 320px; /* Desktop height */
+    gap: 20px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1013,13 +1022,12 @@ img, video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  display: block;
   transition: transform 0.4s ease;
-  min-width: 0;
 }
 
 .kg-row img:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .knowledge-content {
